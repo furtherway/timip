@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Trademark Insights México — Análisis Marcario On Demand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-deep: #0E0E0E;
+    --navy: #141414;
+    --navy-mid: #1A1A1A;
+    --navy-lite: #222222;
+    --red: #D41E1E;
+    --red-bright: #E82020;
+    --gold: #B8963E;
+    --gold-lite: #D4AC5A;
+    --cream: #F0EDE8;
+    --cream-dim: #C4BFB8;
+    --white: #FFFFFF;
+    --gray: #666666;
+    --gray-lite: #999999;
+    --border: rgba(255,255,255,0.08);
+    --border-gold: rgba(184,150,62,0.2);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy-deep);
+    color: var(--cream);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  /* ── Typography ────────────────────────────────────────── */
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .mono  { font-family: 'Space Mono', monospace; }
+  /* ── Noise overlay ─────────────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  section, nav, footer { position: relative; z-index: 1; }
+
+  /* ── NAV ───────────────────────────────────────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(14,14,14,0.97);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-main {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 5vw;
+    height: 72px;
+  }
+  .nav-main .nav-right {
+    display: flex; justify-content: flex-end; align-items: center; gap: 20px;
+  }
+  /* ── TIM Logo ──────────────────────────────────────────── */
+  .tim-logo {
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    grid-column: 2;
+  }
+  .tim-mark svg { display: block; }
+  .tim-wordmark {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .tim-name-inline {
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .tim-name-trademark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 20px;
+    color: var(--white); letter-spacing: 0.04em;
+  }
+  .tim-name-insights {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-style: italic; font-size: 20px;
+    color: var(--white); letter-spacing: 0.02em;
+  }
+  .tim-name-mexico {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 20px;
+    color: var(--white); letter-spacing: 0.04em;
+  }
+  .tim-divider {
+    width: 1px; height: 32px;
+    background: rgba(255,255,255,0.12);
+    flex-shrink: 0;
+  }
+  .tim-tagline { line-height: 1.25; }
+  .tim-tagline span {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300; font-size: 11px;
+    color: var(--gray-lite); display: block;
+    letter-spacing: 0.06em;
+  }
+  .tim-tagline span + span { color: var(--gray); font-size: 10px; }
+
+  /* ── Section nav strip ─────────────────────────────────── */
+  .section-nav {
+    display: flex; align-items: center; gap: 0;
+    padding: 0 5vw;
+    height: 40px;
+    border-top: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .sec-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 0 20px; height: 100%;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.25s;
+    position: relative;
+    border: none;
+    background: none;
+  }
+  .sec-btn:hover { color: var(--cream); }
+  .sec-btn.active { color: var(--white); }
+  .sec-btn.active::after {
+    content: '';
+    position: absolute; bottom: 0; left: 20px; right: 20px;
+    height: 2px; background: var(--red);
+    border-radius: 1px;
+  }
+  .sec-btn-num {
+    color: var(--red);
+    font-size: 7.5px;
+    opacity: 0.65;
+  }
+  .sec-nav-spacer { flex: 1; min-width: 12px; }
+  .sec-nav-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.1em;
+    color: rgba(184,150,62,0.45);
+    white-space: nowrap;
+    padding-left: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ── Mobile section nav — dropdown ─────────────────────── */
+  .sec-nav-mobile {
+    display: none;
+    height: 40px;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .sec-nav-trigger {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 4vw; height: 100%; width: 100%;
+    background: none; border: none; cursor: pointer;
+    text-decoration: none;
+  }
+  .sec-nav-trigger-left {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sec-nav-current {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--white);
+  }
+  .sec-nav-current-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; color: var(--red); opacity: 0.8;
+  }
+  .sec-nav-chevron {
+    font-size: 10px; color: var(--gray);
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .sec-nav-mobile.open .sec-nav-chevron { transform: rotate(180deg); }
+  .sec-nav-mobile.open::after {
+    content: '';
+    position: absolute; bottom: 0; left: 4vw; right: 4vw;
+    height: 2px; background: var(--red); border-radius: 1px;
+  }
+  .sec-nav-dropdown {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(6,14,28,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    z-index: 200;
+    padding: 6px 0;
+  }
+  .sec-nav-mobile.open .sec-nav-dropdown { display: block; }
+  .sec-drop-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 4vw;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray);
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+    border-left: 2px solid transparent;
+  }
+  .sec-drop-item:hover { color: var(--cream); background: rgba(255,255,255,0.03); }
+  .sec-drop-item.active {
+    color: var(--white);
+    border-left-color: var(--red);
+    background: rgba(212,30,30,0.05);
+  }
+  .sec-drop-num { color: var(--red); opacity: 0.65; font-size: 8px; }
+
+  .nav-cta {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    padding: 9px 20px;
+    border: 1px solid var(--red);
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+  }
+  .nav-cta:hover { background: var(--red); }
+
+  /* ── HERO ──────────────────────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: auto;
+    gap: 48px;
+    align-items: start;
+    padding: 6vh 5vw 7vh;
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 112px);
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    grid-column: 1 / -1;
+    background-image:
+      linear-gradient(rgba(184,150,62,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,150,62,0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 10%, transparent 75%);
+    pointer-events: none;
+  }
+  .hero-accent {
+    position: absolute; top: 0; right: 0;
+    width: 50vw; height: 100%;
+    background: radial-gradient(ellipse 80% 80% at 85% 40%, rgba(212,30,30,0.05), transparent 70%);
+    pointer-events: none;
+  }
+  /* Left column */
+  .hero-left {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding-top: 4vh;
+  }
+  /* Right column */
+  .hero-right {
+    position: relative; z-index: 1;
+    padding-top: 4vh;
+  }
+  .hero-calendly-card {
+    background: rgba(26,26,26,0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .hero-calendly-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .hero-cal-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cream-dim);
+  }
+  .hero-cal-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.1em;
+    padding: 3px 10px;
+    background: rgba(212,30,30,0.15);
+    border: 1px solid rgba(212,30,30,0.3);
+    color: rgba(248,144,144,0.9);
+  }
+  .hero-calendly-card .calendly-inline-widget {
+    min-width: 0 !important;
+    width: 100% !important;
+    height: 580px !important;
+  }
+  /* Hero text elements */
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+  .eyebrow-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-lite);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(42px, 5.5vw, 80px);
+    font-weight: 300; line-height: 1.05;
+    letter-spacing: -0.5px; color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--cream); }
+  .hero h1 .accent-word { color: var(--red-bright); font-style: italic; }
+  .hero-desc {
+    font-size: 15px; color: var(--gray-lite);
+    line-height: 1.75; margin-bottom: 36px; font-weight: 300;
+  }
+  .hero-actions {
+    display: flex; align-items: center; gap: 20px;
+    flex-wrap: wrap; margin-bottom: 48px;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 30px; background: var(--red); color: var(--white);
+    text-decoration: none; font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 500;
+    transition: all 0.2s; border: 1px solid var(--red);
+  }
+  .btn-primary:hover { background: var(--red-bright); border-color: var(--red-bright); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold-lite); text-decoration: none; transition: color 0.2s; font-weight: 400;
+  }
+  .btn-ghost:hover { color: var(--gold); }
+  .btn-ghost .arrow { transition: transform 0.2s; }
+  .btn-ghost:hover .arrow { transform: translateX(4px); }
+  .hero-stats {
+    display: flex; gap: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+  }
+  .stat-item {
+    flex: 1; padding-right: 24px;
+    border-right: 1px solid var(--border); margin-right: 24px;
+  }
+  .stat-item:last-child { border-right: none; margin-right: 0; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300; color: var(--white);
+    display: block; line-height: 1; margin-bottom: 5px;
+  }
+  .stat-label {
+    font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray); font-family: 'Space Mono', monospace;
+  }
+
+  /* ── SECTION COMMON ────────────────────────────────────── */
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px;
+  }
+  .section-label .line { width: 32px; height: 1px; background: var(--gold); }
+  .section-label span {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-lite);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+  }
+  .section-title em { font-style: italic; color: var(--cream-dim); }
+
+  /* ── PROCESS SECTION ───────────────────────────────────── */
+  .process {
+    padding: 100px 5vw;
+    background: #111111;
+    border-top: 1px solid var(--border);
+  }
+  .process-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: end;
+    margin-bottom: 72px;
+  }
+  .process-header p {
+    color: var(--gray-lite); font-size: 15px; line-height: 1.75;
+    font-weight: 300; align-self: end;
+  }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    position: relative;
+  }
+  .process-step {
+    background: #1A1A1A;
+    padding: 40px 32px;
+    border-top: 2px solid transparent;
+    border-radius: 2px;
+    transition: border-color 0.3s;
+    position: relative;
+  }
+  .process-step:hover { border-top-color: var(--red); }
+  .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .step-icon-area {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border-gold);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .step-icon-area svg { width: 22px; height: 22px; fill: none; stroke: var(--gold-lite); stroke-width: 1.5; }
+  .process-step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--white); margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .process-step p {
+    font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300;
+  }
+  .step-connector {
+    position: absolute; top: 50%; right: -1px;
+    width: 2px; height: 30%;
+    transform: translateY(-50%);
+    background: linear-gradient(transparent, var(--border-gold), transparent);
+    display: none;
+  }
+
+  /* ── EMAIL MOCKUP ──────────────────────────────────────── */
+  .mockup-section {
+    padding: 100px 5vw;
+    background: #0E0E0E;
+    border-top: 1px solid var(--border);
+  }
+  .mockup-header { margin-bottom: 56px; }
+  .mockup-sub {
+    font-size: 15px; color: var(--gray-lite);
+    max-width: 520px; line-height: 1.75; font-weight: 300;
+    margin-top: 16px;
+  }
+  .email-mockup-wrap {
+    background: #111111;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  }
+  /* Chrome bar */
+  .email-chrome {
+    background: #1A1A1A;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 10px 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .email-chrome-dots { display: flex; gap: 7px; }
+  .email-chrome-bar {
+    flex: 1; display: flex; align-items: center; gap: 10px;
+  }
+  .email-chrome-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .email-chrome-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; padding: 2px 8px;
+    background: rgba(212,30,30,0.2);
+    border: 1px solid rgba(212,30,30,0.3);
+    color: rgba(248,144,144,0.9);
+    border-radius: 10px;
+  }
+  /* Two-panel layout */
+  .email-panels {
+    display: grid; grid-template-columns: 260px 1fr;
+    min-height: 500px;
+  }
+  /* Inbox list */
+  .email-list {
+    border-right: 1px solid rgba(255,255,255,0.06);
+    background: #111111;
+  }
+  .email-list-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 16px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer; transition: background 0.15s;
+  }
+  .email-list-item:hover { background: rgba(255,255,255,0.025); }
+  .email-list-item.unread { background: rgba(212,30,30,0.04); }
+  .email-list-avatar {
+    width: 32px; height: 32px; flex-shrink: 0;
+    background: rgba(212,30,30,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tim-avatar { border-radius: 6px; }
+  .email-list-body { flex: 1; min-width: 0; }
+  .email-list-from {
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 3px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .email-list-subject {
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .email-list-preview {
+    font-size: 10px; color: rgba(255,255,255,0.3);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .email-list-meta {
+    display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0;
+  }
+  .email-list-time {
+    font-size: 9px; color: rgba(255,255,255,0.35);
+    font-family: 'Space Mono', monospace;
+    white-space: nowrap;
+  }
+  .email-unread-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--red);
+  }
+  /* Message view */
+  .email-message {
+    display: flex; flex-direction: column;
+    background: #141414;
+    overflow: hidden;
+  }
+  .email-msg-header {
+    padding: 24px 28px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .email-msg-subject {
+    font-size: 16px; font-weight: 600;
+    color: var(--white); margin-bottom: 14px; line-height: 1.3;
+  }
+  .email-msg-meta-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 6px;
+  }
+  .email-msg-from-name {
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8);
+  }
+  .email-msg-from-addr {
+    font-size: 10px; color: var(--gray); font-family: 'Space Mono', monospace;
+    margin-top: 1px;
+  }
+  .email-msg-date {
+    font-size: 10px; color: var(--gray);
+    font-family: 'Space Mono', monospace; flex-shrink: 0;
+  }
+  .email-msg-to {
+    font-size: 10px; color: rgba(255,255,255,0.3);
+  }
+  .email-msg-to span { color: rgba(255,255,255,0.5); }
+  /* Message body */
+  .email-msg-body {
+    padding: 22px 28px;
+    overflow-y: auto;
+  }
+  .email-body-p {
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    line-height: 1.7; margin-bottom: 14px; font-weight: 300;
+  }
+  .email-body-p strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+  /* Result card */
+  .email-result-card {
+    background: #1A1A1A;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .email-result-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .email-result-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+  }
+  .email-result-risk {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.08em;
+    padding: 3px 10px; border-radius: 3px;
+  }
+  .risk-medium {
+    background: rgba(255,180,0,0.12);
+    border: 1px solid rgba(255,180,0,0.25);
+    color: rgba(255,210,80,0.9);
+  }
+  .risk-high {
+    background: rgba(212,30,30,0.15);
+    border: 1px solid rgba(212,30,30,0.3);
+    color: rgba(248,144,144,0.9);
+  }
+  .email-result-stats {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 12px;
+  }
+  .email-result-stat { text-align: left; }
+  .email-result-stat-val {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px; font-weight: 700;
+    color: #fff; display: block; line-height: 1; margin-bottom: 3px;
+  }
+  .email-result-stat-name {
+    font-size: 9px; color: rgba(255,255,255,0.3);
+    font-family: 'Space Mono', monospace; letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+  /* Attachments */
+  .email-attachments { margin-top: 16px; }
+  .email-attach-label {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; color: rgba(255,255,255,0.3);
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .email-attach-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .email-attach-file {
+    display: flex; align-items: center; gap: 10px;
+    background: #1A1A1A;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 10px 14px;
+    cursor: pointer; transition: border-color 0.15s;
+    flex: 1; min-width: 0;
+  }
+  .email-attach-file:hover { border-color: rgba(56,180,255,0.3); }
+  .email-attach-icon {
+    width: 36px; height: 36px; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .email-attach-icon.xlsx {
+    background: rgba(34,197,94,0.12);
+    border: 1px solid rgba(34,197,94,0.2);
+  }
+  .email-attach-icon.xlsx svg { stroke: rgba(34,197,94,0.8); }
+  .email-attach-info { flex: 1; min-width: 0; }
+  .email-attach-name {
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .email-attach-size {
+    font-size: 9px; color: rgba(255,255,255,0.3);
+    font-family: 'Space Mono', monospace; margin-top: 2px;
+  }
+  .email-attach-dl {
+    font-size: 14px; color: rgba(255,255,255,0.3);
+    flex-shrink: 0; transition: color 0.15s;
+  }
+  .email-attach-file:hover .email-attach-dl { color: rgba(56,180,255,0.7); }
+
+  /* ── SEGUIMIENTO MENSUAL ───────────────────────────────── */
+  .seguimiento {
+    padding: 100px 5vw;
+    background: #111111;
+    border-top: 1px solid var(--border);
+  }
+  .seg-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: end;
+    margin-bottom: 56px;
+  }
+  .seg-intro {
+    font-size: 15px; color: var(--gray-lite); line-height: 1.8; font-weight: 300; align-self: end;
+  }
+  /* Frequency cards */
+  .freq-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 12px; margin-bottom: 40px;
+  }
+  .freq-card {
+    background: #1A1A1A;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 20px;
+    border-top: 2px solid transparent;
+    transition: border-color 0.25s, border-top-color 0.25s;
+    position: relative;
+  }
+  .freq-card:hover { border-color: rgba(212,30,30,0.2); border-top-color: rgba(212,30,30,0.4); }
+  .freq-card.active { border-top-color: var(--red); border-color: rgba(212,30,30,0.2); }
+  .freq-badge {
+    position: absolute; top: 14px; right: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 7px; letter-spacing: 0.1em;
+    padding: 3px 8px; text-transform: uppercase;
+    background: rgba(212,30,30,0.15);
+    border: 1px solid rgba(212,30,30,0.3);
+    color: rgba(248,144,144,0.9);
+  }
+  .freq-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--border-gold);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .freq-icon svg { width: 18px; height: 18px; stroke: var(--gold-lite); }
+  .freq-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 400;
+    color: var(--white); margin-bottom: 8px; line-height: 1.2;
+  }
+  .freq-desc { font-size: 12px; color: var(--gray); line-height: 1.65; margin-bottom: 14px; font-weight: 300; }
+  .freq-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.08em;
+    color: var(--gold-lite);
+  }
+  /* Cost banner */
+  .seg-banner {
+    display: grid; grid-template-columns: 1fr auto auto;
+    gap: 48px; align-items: center;
+    background: #1A1A1A;
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    padding: 32px 36px;
+  }
+  .seg-banner-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold-lite);
+    margin-bottom: 6px;
+  }
+  .seg-banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 300;
+    color: var(--white); line-height: 1.1; margin-bottom: 6px;
+  }
+  .seg-banner-desc { font-size: 13px; color: var(--gray); font-weight: 300; }
+  .seg-banner-features {
+    display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;
+  }
+  .seg-feature {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; color: var(--cream-dim);
+  }
+  .seg-feat-icon {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--gold-lite);
+    width: 18px; flex-shrink: 0; text-align: center;
+  }
+  .seg-cta {
+    display: inline-flex; align-items: center;
+    padding: 14px 24px;
+    border: 1px solid var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
+  }
+  .seg-cta:hover { background: var(--red); }
+
+  .deliverables {
+    padding: 100px 5vw;
+    border-top: 1px solid var(--border);
+    background: #111111;
+  }
+  .deliv-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-top: 56px;
+  }
+  .deliv-card {
+    background: #1A1A1A;
+    padding: 48px 40px;
+    border-top: 2px solid var(--red);
+    border-radius: 2px;
+  }
+  .deliv-card:last-child { border-top-color: var(--gold); }
+  .deliv-file-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212,30,30,0.12);
+    border: 1px solid rgba(212,30,30,0.25);
+    padding: 6px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; color: rgba(248,144,144,0.9);
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+  .deliv-card:last-child .deliv-file-badge {
+    background: rgba(184,150,62,0.1);
+    border-color: rgba(184,150,62,0.25);
+    color: var(--gold-lite);
+  }
+  .deliv-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 400;
+    color: var(--white); margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .deliv-card p {
+    font-size: 13px; color: var(--gray); line-height: 1.75; font-weight: 300; margin-bottom: 24px;
+  }
+  .deliv-sheets {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .deliv-sheet {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 2px;
+    border-left: 2px solid rgba(255,255,255,0.1);
+  }
+  .deliv-sheet-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; color: var(--gray);
+    width: 20px; flex-shrink: 0;
+  }
+  .deliv-sheet-name { font-size: 12px; color: var(--cream-dim); }
+
+  /* ── DATA SOURCES ──────────────────────────────────────── */
+  .sources {
+    padding: 100px 5vw;
+    background: #0E0E0E;
+    border-top: 1px solid var(--border);
+  }
+  .sources-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 56px;
+  }
+  .source-card {
+    background: #1A1A1A;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 36px 28px;
+    transition: border-color 0.3s;
+  }
+  .source-card:hover { border-color: var(--border-gold); }
+  .source-flag {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 20px;
+  }
+  .source-flag-code {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.12em;
+    color: var(--gold-lite); text-transform: uppercase;
+  }
+  .source-flag-line { flex: 1; height: 1px; background: var(--border-gold); }
+  .source-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .source-card p { font-size: 12px; color: var(--gray); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
+  .source-tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.3);
+    margin-right: 6px; margin-bottom: 4px;
+  }
+  .source-tag.active {
+    border-color: rgba(184,150,62,0.3);
+    color: var(--gold-lite);
+  }
+
+  /* ── ML CALLOUT ────────────────────────────────────────── */
+  .ml-callout {
+    padding: 100px 5vw;
+    background: #111111;
+    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .ml-visual {
+    background: #1A1A1A;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 32px;
+    position: relative;
+  }
+  .ml-vis-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.15em;
+    color: rgba(184,150,62,0.7); text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ml-metric-row {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 12px;
+  }
+  .ml-metric-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; color: rgba(255,255,255,0.35);
+    width: 110px; flex-shrink: 0;
+  }
+  .ml-metric-bar-track {
+    flex: 1; height: 4px;
+    background: rgba(255,255,255,0.06);
+  }
+  .ml-metric-bar {
+    height: 100%;
+    background: var(--red);
+  }
+  .ml-metric-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; color: rgba(255,255,255,0.45);
+    width: 36px; text-align: right;
+  }
+  .ml-divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .ml-risk-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  }
+  .ml-risk-cell {
+    padding: 8px 6px; text-align: center;
+    font-family: 'Space Mono', monospace; font-size: 8px;
+  }
+  .ml-risk-cell.r4 { background: rgba(123,0,0,0.4); color: #FFAAAA; }
+  .ml-risk-cell.r3 { background: rgba(192,0,0,0.2); color: #FFB0B0; }
+  .ml-risk-cell.r2 { background: rgba(255,204,204,0.1); color: #FF9090; }
+  .ml-risk-cell.r1 { background: rgba(255,228,225,0.08); color: rgba(255,160,160,0.6); }
+  .ml-content .section-title { margin-bottom: 20px; }
+  .ml-content p { font-size: 14px; color: var(--gray-lite); line-height: 1.8; font-weight: 300; margin-bottom: 20px; }
+  .ml-feature {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .ml-feature-dot {
+    width: 6px; height: 6px;
+    background: var(--red);
+    flex-shrink: 0; margin-top: 6px;
+  }
+  .ml-feature p { margin-bottom: 0; font-size: 13px; }
+
+  /* ── AUDIENCE ──────────────────────────────────────────── */
+  .audience {
+    padding: 100px 5vw;
+    background: #0E0E0E;
+    border-top: 1px solid var(--border);
+  }
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 56px;
+  }
+  .audience-card {
+    background: #1A1A1A;
+    border-radius: 2px;
+    padding: 40px 32px;
+    position: relative; overflow: hidden;
+  }
+  .audience-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: var(--border-gold);
+  }
+  .audience-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; font-weight: 300;
+    color: rgba(255,255,255,0.04);
+    position: absolute; top: -8px; right: 20px;
+    line-height: 1; pointer-events: none;
+  }
+  .audience-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.15em;
+    color: var(--gold-lite); text-transform: uppercase;
+    margin-bottom: 16px; display: block;
+  }
+  .audience-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--white); margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .audience-card p {
+    font-size: 13px; color: var(--gray); line-height: 1.75; font-weight: 300;
+    margin-bottom: 24px;
+  }
+  .audience-uses {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .audience-use {
+    font-size: 11px; color: var(--cream-dim);
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(212,30,30,0.3);
+  }
+
+  /* ── CALENDLY ──────────────────────────────────────────── */
+  .calendly-section {
+    padding: 100px 5vw;
+    background: #111111;
+    border-top: 1px solid var(--border);
+  }
+  .calendly-inner {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 72px; align-items: start;
+  }
+  .calendly-intro p {
+    font-size: 14px; color: var(--gray-lite); line-height: 1.8; font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .calendly-benefits {
+    display: flex; flex-direction: column; gap: 12px;
+    margin-top: 32px;
+  }
+  .benefit-row {
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .benefit-icon {
+    width: 32px; height: 32px; flex-shrink: 0;
+    background: rgba(212,30,30,0.1);
+    border: 1px solid rgba(212,30,30,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .benefit-icon svg { width: 14px; height: 14px; fill: none; stroke: var(--red); stroke-width: 1.5; }
+  .benefit-text { font-size: 13px; color: var(--gray-lite); line-height: 1.6; }
+  .benefit-text strong { display: block; color: var(--cream); font-weight: 500; margin-bottom: 2px; font-size: 13px; }
+  .calendly-widget-wrap {
+    background: #1A1A1A;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: 700px;
+  }
+  .calendly-inline-widget {
+    min-width: 320px !important;
+    height: 700px !important;
+    width: 100% !important;
+  }
+
+  /* ── FOOTER ────────────────────────────────────────────── */
+  footer {
+    padding: 60px 5vw 40px;
+    background: #080808;
+    border-top: 1px solid var(--border);
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .footer-brand p {
+    font-size: 12px; color: var(--gray); margin-top: 12px; max-width: 260px;
+    font-weight: 300; line-height: 1.6;
+  }
+  .footer-links-grid {
+    display: flex; gap: 60px;
+  }
+  .footer-col h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold-lite);
+    margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block; margin-bottom: 8px;
+    font-size: 12px; color: var(--gray); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-legal {
+    font-size: 11px; color: var(--gray);
+    font-family: 'Space Mono', monospace;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 14px;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* ── ANIMATIONS ────────────────────────────────────────── */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up-d1 { transition-delay: 0.1s; }
+  .fade-up-d2 { transition-delay: 0.2s; }
+  .fade-up-d3 { transition-delay: 0.3s; }
+
+  /* ═══════════════════════════════════════════════════════
+     RESPONSIVE — Desktop · iPad · Móvil
+  ══════════════════════════════════════════════════════ */
+
+  /* ── Tablet landscape / small desktop ≤ 1100px ──────── */
+  @media (max-width: 1100px) {
+    .hero { grid-template-columns: 1fr 360px; gap: 36px; }
+    .hero h1 { font-size: clamp(38px, 5vw, 64px); }
+    .tim-tagline { display: none; }
+    .tim-divider { display: none; }
+    .ml-callout { gap: 48px; }
+    .section-title { font-size: clamp(32px, 4vw, 48px); }
+  }
+
+  /* ── Tablet portrait (iPad) ≤ 900px ─────────────────── */
+  @media (max-width: 900px) {
+    /* Nav */
+    .tim-tagline { display: none; }
+    .tim-divider { display: none; }
+    .sec-nav-tag { display: none; }
+    .nav-cta { padding: 8px 14px; font-size: 9px; }
+
+    /* Hero — stack vertically */
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding: 5vh 5vw 6vh;
+      gap: 36px;
+    }
+    .hero-left { padding-top: 0; }
+    .hero-right { padding-top: 0; }
+    .hero h1 { font-size: clamp(36px, 7vw, 56px); }
+    .hero-calendly-card .calendly-inline-widget { height: 520px !important; }
+
+    /* Process */
+    .process { padding: 64px 5vw; }
+    .process-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+
+    /* Mockup email */
+    .mockup-section { padding: 64px 5vw; }
+    .email-panels { grid-template-columns: 1fr; }
+    .email-list { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); display: none; }
+    .email-result-stats { grid-template-columns: repeat(2,1fr); gap: 10px; }
+    /* Deliverables */
+    .deliverables { padding: 64px 5vw; }
+    .deliv-grid { grid-template-columns: 1fr; }
+    .deliv-card { padding: 36px 28px; }
+
+    /* Seguimiento */
+    .seguimiento { padding: 64px 5vw; }
+    .seg-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+    .freq-grid { grid-template-columns: repeat(3, 1fr); }
+    .seg-banner { grid-template-columns: 1fr; gap: 24px; }
+
+    /* Sources */
+    .sources { padding: 64px 5vw; }
+    .sources-grid { grid-template-columns: 1fr 1fr; }
+
+    /* ML */
+    .ml-callout { grid-template-columns: 1fr; gap: 40px; padding: 64px 5vw; }
+
+    /* Audience */
+    .audience { padding: 64px 5vw; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Calendly section */
+    .calendly-section { padding: 64px 5vw; }
+    .calendly-inner { grid-template-columns: 1fr; gap: 40px; }
+
+    /* Footer */
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-links-grid { flex-wrap: wrap; gap: 28px; }
+  }
+
+  /* ── Mobile ≤ 600px ──────────────────────────────────── */
+  @media (max-width: 600px) {
+    /* Nav */
+    .nav-main { height: 60px; padding: 0 4vw; }
+    .tim-name-trademark, .tim-name-mexico { font-size: 12px; }
+    .tim-name-insights { font-size: 12px; }
+    .nav-cta { display: none; }
+    /* Hide desktop strip, show mobile dropdown */
+    .section-nav { display: none; }
+    .sec-nav-mobile { display: block; }
+    .sec-nav-tag { display: none; }
+
+    /* Hero */
+    .hero { padding: 4vh 4vw 5vh; gap: 28px; }
+    .hero h1 { font-size: clamp(32px, 9vw, 44px); letter-spacing: -0.5px; }
+    .hero-desc { font-size: 14px; margin-bottom: 28px; }
+    .hero-actions { gap: 14px; margin-bottom: 32px; }
+    .btn-primary { padding: 12px 22px; font-size: 10px; }
+    .hero-stats { gap: 0; }
+    .stat-item { padding-right: 16px; margin-right: 16px; }
+    .stat-num { font-size: 26px; }
+    .stat-label { font-size: 7px; }
+    .hero-calendly-card .calendly-inline-widget { height: 500px !important; }
+
+    /* Process */
+    .process { padding: 48px 4vw; }
+    .process-steps { grid-template-columns: 1fr; gap: 2px; }
+    .process-step { padding: 28px 22px; }
+    .process-step h3 { font-size: 20px; }
+
+    /* Mockup email - mobile */
+    .mockup-section { padding: 48px 4vw; }
+    .email-attach-row { flex-direction: column; }
+    .email-result-stats { grid-template-columns: repeat(2,1fr); }
+    .email-msg-header { padding: 16px 16px 12px; }
+    .email-msg-body { padding: 16px; }
+    .email-msg-subject { font-size: 13px; }
+
+    /* Deliverables */
+    .deliverables { padding: 48px 4vw; }
+    .deliv-card { padding: 28px 20px; }
+
+    /* Seguimiento */
+    .seguimiento { padding: 48px 4vw; }
+    .freq-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .freq-card { padding: 20px 14px; }
+    .freq-name { font-size: 16px; }
+
+    /* Sources */
+    .sources { padding: 48px 4vw; }
+    .sources-grid { grid-template-columns: 1fr; }
+
+    /* ML */
+    .ml-callout { padding: 48px 4vw; }
+    .ml-risk-grid { grid-template-columns: repeat(2,1fr); }
+
+    /* Audience */
+    .audience { padding: 48px 4vw; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .audience-card { padding: 28px 22px; }
+    .audience-num { font-size: 48px; }
+
+    /* Calendly section */
+    .calendly-section { padding: 48px 4vw; }
+    .calendly-inner { gap: 28px; }
+    .calendly-widget-wrap { min-height: 600px; }
+
+    /* Footer */
+    .footer-links-grid { flex-direction: column; gap: 20px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+
+    /* Section title scale */
+    .section-title { font-size: clamp(28px, 8vw, 40px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ══════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-main">
+    <!-- TIM Logo -->
+    <a href="#" class="tim-logo">
+      <div class="tim-wordmark">
+        <div class="tim-name-inline">
+          <span class="tim-name-trademark">Trademark</span>
+          <span class="tim-name-insights">Insights</span>
+          <span class="tim-name-mexico">Mexico</span>
+        </div>
+        <div class="tim-divider"></div>
+        <div class="tim-tagline">
+          <span>Phonetic</span>
+          <span>Intelligence</span>
+        </div>
+      </div>
+    </a>
+    <!-- Right placeholder for grid balance -->
+    <div></div>
+  </div>
+
+  <!-- Section navigation strip — desktop -->
+  <div class="section-nav" id="section-nav">
+    <a href="#proceso" class="sec-btn active" data-section="proceso">
+      <span class="sec-btn-num">01</span> Proceso
+    </a>
+    <a href="#entregables" class="sec-btn" data-section="entregables">
+      <span class="sec-btn-num">02</span> Productos
+    </a>
+    <a href="#seguimiento" class="sec-btn" data-section="seguimiento">
+      <span class="sec-btn-num">03</span> Seguimiento
+    </a>
+    <a href="#fuentes" class="sec-btn" data-section="fuentes">
+      <span class="sec-btn-num">04</span> Fuentes
+    </a>
+    <a href="#para-quien" class="sec-btn" data-section="para-quien">
+      <span class="sec-btn-num">05</span> Para Quién
+    </a>
+    <a href="#agenda" class="sec-btn" data-section="agenda">
+      <span class="sec-btn-num">06</span> Agendar
+    </a>
+    <div class="sec-nav-spacer"></div>
+    <span class="sec-nav-tag">On Demand · IMPI · OMPI · SIGA</span>
+  </div>
+
+  <!-- Section navigation — mobile dropdown -->
+  <div class="sec-nav-mobile" id="sec-nav-mobile">
+    <button class="sec-nav-trigger" id="sec-nav-trigger" onclick="toggleSecNav()">
+      <span class="sec-nav-trigger-left">
+        <span class="sec-nav-current-num" id="mob-sec-num">01</span>
+        <span class="sec-nav-current" id="mob-sec-label">Proceso</span>
+      </span>
+      <span class="sec-nav-chevron" id="sec-chevron">▾</span>
+    </button>
+    <div class="sec-nav-dropdown" id="sec-nav-dropdown">
+      <a href="#proceso" class="sec-drop-item active" data-section="proceso" onclick="closeMobNav()">
+        <span class="sec-drop-num">01</span> Proceso
+      </a>
+      <a href="#entregables" class="sec-drop-item" data-section="entregables" onclick="closeMobNav()">
+        <span class="sec-drop-num">02</span> Productos
+      </a>
+      <a href="#seguimiento" class="sec-drop-item" data-section="seguimiento" onclick="closeMobNav()">
+        <span class="sec-drop-num">03</span> Seguimiento
+      </a>
+      <a href="#fuentes" class="sec-drop-item" data-section="fuentes" onclick="closeMobNav()">
+        <span class="sec-drop-num">04</span> Fuentes
+      </a>
+      <a href="#para-quien" class="sec-drop-item" data-section="para-quien" onclick="closeMobNav()">
+        <span class="sec-drop-num">05</span> Para Quién
+      </a>
+      <a href="#agenda" class="sec-drop-item" data-section="agenda" onclick="closeMobNav()">
+        <span class="sec-drop-num">06</span> Agendar
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-accent"></div>
+
+  <!-- ── Left column: headline + content ── -->
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Phonetic Intelligence · On Demand</span>
+    </div>
+
+    <h1 class="fade-up fade-up-d1">
+      Inteligencia marcaria<br>
+      <em>de precisión,</em><br>
+      <span class="accent-word">entregada</span> en horas.
+    </h1>
+
+    <p class="hero-desc fade-up fade-up-d2">
+      Consultas IMPI Marcanet, OMPI Madrid Monitor y Gaceta SIGA en tiempo real, analizadas por motor de IA propio. Dos productos especializados — Factibilidad de Registro y Análisis de Oposición — con seguimiento mensual por marca, clases ilimitadas.
+    </p>
+
+    <div class="hero-actions fade-up fade-up-d3">
+      <a href="#proceso" class="btn-primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Ver cómo funciona
+      </a>
+      <a href="#entregables" class="btn-ghost">
+        Ver entregables <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="hero-stats fade-up">
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Fuentes oficiales</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Clases incluidas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Frecuencias de análisis</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Right column: Calendly ── -->
+  <div class="hero-right fade-up fade-up-d2">
+    <div class="hero-calendly-card">
+      <div class="hero-calendly-header">
+        <span class="hero-cal-title">Agenda tu consulta gratuita</span>
+        <span class="hero-cal-badge">30 min · Sin costo</span>
+      </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/consultas-werfurther/30min?background_color=141414&text_color=f0ede8&primary_color=d41e1e" style="min-width:0;height:580px;width:100%;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══════════════════════════════════════════ -->
+<section class="process" id="proceso">
+  <div class="process-header">
+    <div>
+      <div class="section-label">
+        <div class="line"></div>
+        <span>El proceso</span>
+      </div>
+      <h2 class="section-title fade-up">Tres fases.<br><em>Un análisis completo.</em></h2>
+    </div>
+    <p class="fade-up fade-up-d1">El sistema ejecuta tres fases de búsqueda en paralelo sobre bases de datos oficiales, aplica métricas fonéticas y un modelo XGBoost entrenado, y consolida todo en reportes accionables.</p>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step fade-up">
+      <span class="step-num">01</span>
+      <div class="step-icon-area">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <h3>Búsqueda fonética multifuente</h3>
+      <p>Consulta simultánea en IMPI Marcanet, OMPI Madrid Monitor y Gaceta SIGA. Búsqueda fonética automatizada con Playwright para marcas nacionales e internacionales.</p>
+    </div>
+    <div class="process-step fade-up fade-up-d1">
+      <span class="step-num">02</span>
+      <div class="step-icon-area">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Motor de similitud IA</h3>
+      <p>Algoritmo compuesto: distancia Levenshtein + similitud Jaro-Winkler + clasificador XGBoost. Cada conflicto potencial recibe un puntaje de probabilidad de confusión.</p>
+    </div>
+    <div class="process-step fade-up fade-up-d2">
+      <span class="step-num">03</span>
+      <div class="step-icon-area">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3>Entrega directa a tu correo</h3>
+      <p>Cada producto genera un Excel propio con Nota Técnica, tabla de relevantes y análisis completo. Clasificación de riesgo en cuatro niveles. Entregado en horas, listo para estrategia legal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ENTREGA POR CORREO ════════════════════════════════ -->
+<section class="mockup-section">
+  <div class="mockup-header">
+    <div class="section-label">
+      <div class="line"></div>
+      <span>La entrega</span>
+    </div>
+    <h2 class="section-title fade-up">Tu análisis llega directo<br><em>a tu correo electrónico.</em></h2>
+    <p class="mockup-sub fade-up fade-up-d1">Sin plataformas. Sin cuentas que crear. Solicitas el análisis, lo ejecutamos y en horas recibes el Excel directamente en tu bandeja de entrada.</p>
+  </div>
+
+  <div class="email-mockup-wrap fade-up">
+    <!-- Email client chrome -->
+    <div class="email-chrome">
+      <div class="email-chrome-dots">
+        <div class="mock-dot" style="background:#FF5F57"></div>
+        <div class="mock-dot" style="background:#FEBC2E"></div>
+        <div class="mock-dot" style="background:#28C840"></div>
+      </div>
+      <div class="email-chrome-bar">
+        <span class="email-chrome-label">Bandeja de entrada</span>
+        <span class="email-chrome-count">1 nuevo</span>
+      </div>
+    </div>
+
+    <!-- Email list panel + message panel -->
+    <div class="email-panels">
+
+      <!-- Left: inbox list -->
+      <div class="email-list">
+        <div class="email-list-item unread">
+          <div class="email-list-avatar tim-avatar">
+            <svg width="14" height="18" viewBox="0 0 30 38" fill="none">
+              <path d="M2,0.5 L14,0.5 Q28,0.5 28,9.5 Q28,18 14,18 L2,18 Q8.5,13.5 8.5,9.5 Q8.5,5.5 2,0.5 Z" fill="#E82020"/>
+              <path d="M2,20 L14,20 Q28,20 28,29 Q28,37.5 14,37.5 L2,37.5 Q8.5,33 8.5,29 Q8.5,25 2,20 Z" fill="#E82020"/>
+            </svg>
+          </div>
+          <div class="email-list-body">
+            <div class="email-list-from">Trademark Insights México</div>
+            <div class="email-list-subject">Factibilidad · NEXAGEN · Cl. 5, 10, 44</div>
+            <div class="email-list-preview">Tu reporte está listo — adjunto encontrarás el análisis completo...</div>
+          </div>
+          <div class="email-list-meta">
+            <span class="email-list-time">10:42 am</span>
+            <span class="email-unread-dot"></span>
+          </div>
+        </div>
+        <div class="email-list-item">
+          <div class="email-list-avatar tim-avatar" style="opacity:0.45">
+            <svg width="14" height="18" viewBox="0 0 30 38" fill="none">
+              <path d="M2,0.5 L14,0.5 Q28,0.5 28,9.5 Q28,18 14,18 L2,18 Q8.5,13.5 8.5,9.5 Q8.5,5.5 2,0.5 Z" fill="#E82020"/>
+              <path d="M2,20 L14,20 Q28,20 28,29 Q28,37.5 14,37.5 L2,37.5 Q8.5,33 8.5,29 Q8.5,25 2,20 Z" fill="#E82020"/>
+            </svg>
+          </div>
+          <div class="email-list-body">
+            <div class="email-list-from" style="color:rgba(255,255,255,0.4)">Trademark Insights México</div>
+            <div class="email-list-subject" style="color:rgba(255,255,255,0.35);font-weight:400">Seguimiento Quincenal · BRANDNAME</div>
+            <div class="email-list-preview">Gaceta 24-abr — sin conflictos relevantes detectados...</div>
+          </div>
+          <div class="email-list-meta">
+            <span class="email-list-time" style="color:rgba(255,255,255,0.25)">Ayer</span>
+          </div>
+        </div>
+        <div class="email-list-item">
+          <div class="email-list-avatar tim-avatar" style="opacity:0.3">
+            <svg width="14" height="18" viewBox="0 0 30 38" fill="none">
+              <path d="M2,0.5 L14,0.5 Q28,0.5 28,9.5 Q28,18 14,18 L2,18 Q8.5,13.5 8.5,9.5 Q8.5,5.5 2,0.5 Z" fill="#E82020"/>
+              <path d="M2,20 L14,20 Q28,20 28,29 Q28,37.5 14,37.5 L2,37.5 Q8.5,33 8.5,29 Q8.5,25 2,20 Z" fill="#E82020"/>
+            </svg>
+          </div>
+          <div class="email-list-body">
+            <div class="email-list-from" style="color:rgba(255,255,255,0.3)">Trademark Insights México</div>
+            <div class="email-list-subject" style="color:rgba(255,255,255,0.25);font-weight:400">Oposición · LEXANOVA · Gaceta 10-abr</div>
+            <div class="email-list-preview">3 solicitudes relevantes detectadas en clase 35...</div>
+          </div>
+          <div class="email-list-meta">
+            <span class="email-list-time" style="color:rgba(255,255,255,0.2)">10 abr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: email open -->
+      <div class="email-message">
+        <!-- Message header -->
+        <div class="email-msg-header">
+          <div class="email-msg-subject">Factibilidad de Registro · NEXAGEN · Clases 5, 10, 44</div>
+          <div class="email-msg-meta-row">
+            <div class="email-msg-from-block">
+              <div class="email-msg-from-name">Trademark Insights México</div>
+              <div class="email-msg-from-addr">analisis@trademarkinsights.mx</div>
+            </div>
+            <div class="email-msg-date">Hoy, 10:42 am</div>
+          </div>
+          <div class="email-msg-to">Para: <span>abogado@firma.com.mx</span></div>
+        </div>
+
+        <!-- Message body -->
+        <div class="email-msg-body">
+          <p class="email-body-p">Estimado/a,</p>
+          <p class="email-body-p">Adjunto encontrará el análisis de <strong>Factibilidad de Registro</strong> para la marca <strong>NEXAGEN</strong> en clases Niza 5, 10 y 44.</p>
+
+          <!-- Result summary card -->
+          <div class="email-result-card">
+            <div class="email-result-header">
+              <span class="email-result-label">Conclusión del análisis</span>
+              <span class="email-result-risk risk-medium">Riesgo Medio · 2/4</span>
+            </div>
+            <div class="email-result-stats">
+              <div class="email-result-stat">
+                <span class="email-result-stat-val">312</span>
+                <span class="email-result-stat-name">Marcas consultadas</span>
+              </div>
+              <div class="email-result-stat">
+                <span class="email-result-stat-val">12</span>
+                <span class="email-result-stat-name">Relevantes detectadas</span>
+              </div>
+              <div class="email-result-stat">
+                <span class="email-result-stat-val">3</span>
+                <span class="email-result-stat-name">Solicitudes SIGA recientes</span>
+              </div>
+              <div class="email-result-stat">
+                <span class="email-result-stat-val">IMPI + OMPI</span>
+                <span class="email-result-stat-name">Fuentes consultadas</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="email-body-p" style="font-size:12px">La Nota Técnica en la Hoja 1 del archivo adjunto detalla la metodología y las conclusiones por fuente. Se recomienda revisar las 12 marcas relevantes antes de presentar la solicitud.</p>
+
+          <!-- Attachments -->
+          <div class="email-attachments">
+            <div class="email-attach-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+              2 archivos adjuntos
+            </div>
+            <div class="email-attach-row">
+              <div class="email-attach-file">
+                <div class="email-attach-icon xlsx">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                </div>
+                <div class="email-attach-info">
+                  <div class="email-attach-name">NEXAGEN_Factibilidad.xlsx</div>
+                  <div class="email-attach-size">5 hojas · 248 KB</div>
+                </div>
+                <div class="email-attach-dl">↓</div>
+              </div>
+              <div class="email-attach-file">
+                <div class="email-attach-icon xlsx">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                </div>
+                <div class="email-attach-info">
+                  <div class="email-attach-name">NEXAGEN_Oposicion_Gaceta.xlsx</div>
+                  <div class="email-attach-size">3 hojas · 134 KB</div>
+                </div>
+                <div class="email-attach-dl">↓</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="email-body-p" style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:12px">Trademark Insights México · analisis@trademarkinsights.mx</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DELIVERABLES ═══════════════════════════════════════ -->
+<section class="deliverables" id="entregables">
+  <div class="section-label">
+    <div class="line"></div>
+    <span>Los productos</span>
+  </div>
+  <h2 class="section-title fade-up">Dos productos independientes.<br><em>Cada uno, su propio análisis.</em></h2>
+
+  <div class="deliv-grid">
+    <div class="deliv-card fade-up">
+      <div class="deliv-file-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        NombreMarca_Factibilidad.xlsx
+      </div>
+      <h3>Factibilidad de Registro</h3>
+      <p>Producto independiente para dictaminar la viabilidad de registro. Consulta marcas registradas nacionales (IMPI) e internacionales (OMPI), más solicitudes recientes de los últimos 30 días. Ideal antes de presentar la solicitud.</p>
+      <div class="deliv-sheets">
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H1</span>
+          <span class="deliv-sheet-name">Nota Técnica — metodología y conclusión de grado</span>
+        </div>
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H2</span>
+          <span class="deliv-sheet-name">Marcas Registradas Relevantes (IMPI + OMPI)</span>
+        </div>
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H3</span>
+          <span class="deliv-sheet-name">Marcas Registradas — Listado Completo</span>
+        </div>
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H4</span>
+          <span class="deliv-sheet-name">Solicitudes SIGA Relevantes (30 días)</span>
+        </div>
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H5</span>
+          <span class="deliv-sheet-name">Solicitudes SIGA — Listado Completo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card fade-up fade-up-d1">
+      <div class="deliv-file-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        AnalisisOposicion.xlsx
+      </div>
+      <h3>Análisis de Oposición</h3>
+      <p>Producto independiente enfocado en la Gaceta de Marcas más reciente. Detecta solicitudes publicadas que puedan representar oposición a tu marca. Esencial para vigilancia marcaria y estrategia de respuesta ante terceros.</p>
+      <div class="deliv-sheets">
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H1</span>
+          <span class="deliv-sheet-name">Nota Técnica — gaceta analizada y metodología</span>
+        </div>
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H2</span>
+          <span class="deliv-sheet-name">Solicitudes SIGA Relevantes — Gaceta Reciente</span>
+        </div>
+        <div class="deliv-sheet">
+          <span class="deliv-sheet-num">H3</span>
+          <span class="deliv-sheet-name">Solicitudes SIGA — Listado Completo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEGUIMIENTO MENSUAL ════════════════════════════════ -->
+<section class="seguimiento" id="seguimiento">
+  <div class="seg-header">
+    <div>
+      <div class="section-label"><div class="line"></div><span>Vigilancia continua</span></div>
+      <h2 class="section-title fade-up">Seguimiento mensual<br><em>por marca.</em></h2>
+    </div>
+    <p class="seg-intro fade-up fade-up-d1">El costo es por marca durante un mes completo. Dentro de ese periodo puedes pactar análisis en la frecuencia que mejor se adapte a tu estrategia — sin límite de clases Niza incluidas.</p>
+  </div>
+
+  <div class="freq-grid fade-up">
+    <div class="freq-card">
+      <div class="freq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="freq-name">Diario</div>
+      <div class="freq-desc">Ejecución todos los días hábiles. Máxima cobertura de la Gaceta.</div>
+      <div class="freq-tag">≈ 22 análisis / mes</div>
+    </div>
+    <div class="freq-card">
+      <div class="freq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="freq-name">Semanal</div>
+      <div class="freq-desc">Monitoreo cada 7 días. Equilibrio entre cobertura y volumen.</div>
+      <div class="freq-tag">≈ 4 análisis / mes</div>
+    </div>
+    <div class="freq-card active">
+      <div class="freq-badge">Popular</div>
+      <div class="freq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="freq-name">Quincenal</div>
+      <div class="freq-desc">Análisis cada 15 días. El favorito para marcas en proceso de registro.</div>
+      <div class="freq-tag">2 análisis / mes</div>
+    </div>
+    <div class="freq-card">
+      <div class="freq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="freq-name">Cada 3 semanas</div>
+      <div class="freq-desc">Seguimiento intermedio para carteras con múltiples marcas activas.</div>
+      <div class="freq-tag">≈ 1–2 análisis / mes</div>
+    </div>
+    <div class="freq-card">
+      <div class="freq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <div class="freq-name">Mensual</div>
+      <div class="freq-desc">Un análisis al mes. Ideal para marcas ya registradas en vigilancia estable.</div>
+      <div class="freq-tag">1 análisis / mes</div>
+    </div>
+  </div>
+
+  <div class="seg-banner fade-up">
+    <div class="seg-banner-left">
+      <div class="seg-banner-label">Modelo de precio</div>
+      <div class="seg-banner-title">Costo por marca · por mes</div>
+      <div class="seg-banner-desc">Sin límite de clases Niza. Sin costo adicional por frecuencia. Sin sorpresas.</div>
+    </div>
+    <div class="seg-banner-features">
+      <div class="seg-feature"><span class="seg-feat-icon">∞</span><span>Clases Niza ilimitadas</span></div>
+      <div class="seg-feature"><span class="seg-feat-icon">✓</span><span>5 frecuencias disponibles</span></div>
+      <div class="seg-feature"><span class="seg-feat-icon">✓</span><span>Excel por cada ejecución</span></div>
+      <div class="seg-feature"><span class="seg-feat-icon">✓</span><span>Entrega directa a tu correo</span></div>
+    </div>
+    <a href="#agenda" class="seg-cta">Cotizar seguimiento →</a>
+  </div>
+</section>
+
+<!-- ═══ DATA SOURCES ═══════════════════════════════════════ -->
+<section class="sources" id="fuentes">
+  <div class="section-label">
+    <div class="line"></div>
+    <span>Fuentes de datos</span>
+  </div>
+  <h2 class="section-title fade-up">Bases de datos oficiales.<br><em>Sin intermediarios.</em></h2>
+
+  <div class="sources-grid">
+    <div class="source-card fade-up">
+      <div class="source-flag">
+        <span class="source-flag-code">MX · IMPI</span>
+        <div class="source-flag-line"></div>
+      </div>
+      <h3>IMPI Marcanet</h3>
+      <p>Base de datos de marcas registradas del Instituto Mexicano de la Propiedad Industrial. Búsqueda fonética automatizada por clase Niza con paginación completa.</p>
+      <span class="source-tag active">Nacional</span>
+      <span class="source-tag active">Fonética</span>
+      <span class="source-tag active">Registradas</span>
+      <span class="source-tag">Clases 1–45</span>
+    </div>
+
+    <div class="source-card fade-up fade-up-d1">
+      <div class="source-flag">
+        <span class="source-flag-code">INT · OMPI</span>
+        <div class="source-flag-line"></div>
+      </div>
+      <h3>OMPI Madrid Monitor</h3>
+      <p>Sistema de registro internacional de marcas de la Organización Mundial de la Propiedad Intelectual. Cobertura de marcas con designación en México por el Sistema de Madrid.</p>
+      <span class="source-tag active">Internacional</span>
+      <span class="source-tag active">Madrid System</span>
+      <span class="source-tag active">Playwright</span>
+      <span class="source-tag">Sistema Madrid</span>
+    </div>
+
+    <div class="source-card fade-up fade-up-d2">
+      <div class="source-flag">
+        <span class="source-flag-code">MX · SIGA</span>
+        <div class="source-flag-line"></div>
+      </div>
+      <h3>IMPI SIGA — Gaceta</h3>
+      <p>Gaceta de Marcas del IMPI con solicitudes presentadas en los últimos 30 días. Monitoreo de solicitudes nuevas aún no registradas pero publicadas para período de oposición.</p>
+      <span class="source-tag active">Solicitudes</span>
+      <span class="source-tag active">30 días</span>
+      <span class="source-tag active">Gaceta</span>
+      <span class="source-tag">Oposición</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ML CALLOUT ═════════════════════════════════════════ -->
+<section class="ml-callout">
+  <div class="ml-visual fade-up">
+    <div class="ml-vis-title">Motor de similitud — métricas por marca analizada</div>
+
+    <div class="ml-metric-row">
+      <span class="ml-metric-label">Levenshtein Dist.</span>
+      <div class="ml-metric-bar-track"><div class="ml-metric-bar" style="width:78%"></div></div>
+      <span class="ml-metric-val">0.22</span>
+    </div>
+    <div class="ml-metric-row">
+      <span class="ml-metric-label">Jaro-Winkler Sim.</span>
+      <div class="ml-metric-bar-track"><div class="ml-metric-bar" style="width:91%;background:var(--gold)"></div></div>
+      <span class="ml-metric-val">0.91</span>
+    </div>
+    <div class="ml-metric-row">
+      <span class="ml-metric-label">Prob. Confusión</span>
+      <div class="ml-metric-bar-track"><div class="ml-metric-bar" style="width:85%"></div></div>
+      <span class="ml-metric-val">0.85</span>
+    </div>
+    <div class="ml-metric-row">
+      <span class="ml-metric-label">Score Concurrencia</span>
+      <div class="ml-metric-bar-track"><div class="ml-metric-bar" style="width:62%;background:rgba(255,255,255,0.2)"></div></div>
+      <span class="ml-metric-val">0.62</span>
+    </div>
+
+    <div class="ml-divider"></div>
+    <div class="ml-vis-title">Clasificación de riesgo — escala 0/4 – 4/4</div>
+    <div class="ml-risk-grid">
+      <div class="ml-risk-cell r4">Alto<br>4/4</div>
+      <div class="ml-risk-cell r3">Medio<br>3/4</div>
+      <div class="ml-risk-cell r2">Bajo<br>2/4</div>
+      <div class="ml-risk-cell r1">Nulo<br>1/4</div>
+    </div>
+    <div style="margin-top:16px">
+      <div class="ml-vis-title">Criterios para grado Alto (4/4)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+        <span class="source-tag active" style="font-size:7px">Similitud visual</span>
+        <span class="source-tag active" style="font-size:7px">Similitud fonética</span>
+        <span class="source-tag active" style="font-size:7px">Similitud conceptual</span>
+        <span class="source-tag active" style="font-size:7px">Misma clase Niza</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ml-content">
+    <div class="section-label">
+      <div class="line"></div>
+      <span>El motor IA</span>
+    </div>
+    <h2 class="section-title fade-up">Más que búsqueda.<br><em>Análisis de similitud</em><br>multicapa.</h2>
+
+    <p class="fade-up fade-up-d1">Cada conflicto potencial es evaluado por un pipeline propio que combina métricas clásicas de distancia con un clasificador de machine learning, reproduciendo el análisis que haría un examinador del IMPI.</p>
+
+    <div class="ml-feature fade-up fade-up-d1">
+      <div class="ml-feature-dot"></div>
+      <p><strong style="color:var(--cream);display:block;margin-bottom:4px">Distancia Levenshtein normalizada</strong>Mide diferencia de caracteres entre marcas, normalizada por longitud. Detecta variaciones ortográficas y errores tipográficos intencionales.</p>
+    </div>
+    <div class="ml-feature fade-up fade-up-d2">
+      <div class="ml-feature-dot"></div>
+      <p><strong style="color:var(--cream);display:block;margin-bottom:4px">Similitud Jaro-Winkler</strong>Algoritmo especializado en nombres y marcas. Mayor peso a prefijos comunes, alta precisión en denominaciones cortas.</p>
+    </div>
+    <div class="ml-feature fade-up fade-up-d3">
+      <div class="ml-feature-dot"></div>
+      <p><strong style="color:var(--cream);display:block;margin-bottom:4px">Clasificador XGBoost</strong>Entrenado sobre miles de pares de marcas, predice probabilidad de confusión. Combina ambas métricas y criterios legales para generar el grado de riesgo definitivo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AUDIENCE ═══════════════════════════════════════════ -->
+<section class="audience" id="para-quien">
+  <div class="section-label">
+    <div class="line"></div>
+    <span>Para quién</span>
+  </div>
+  <h2 class="section-title fade-up">Diseñado para<br><em>práctica legal exigente.</em></h2>
+
+  <div class="audience-grid">
+    <div class="audience-card fade-up">
+      <span class="audience-num">01</span>
+      <span class="audience-tag">Abogado Corporativo</span>
+      <h3>Firmas y práctica corporativa</h3>
+      <p>Para due diligence de M&A, auditorías de portafolio de PI, y asesoría en lanzamientos de nuevas marcas con riesgo cuantificado.</p>
+      <div class="audience-uses">
+        <div class="audience-use">Due diligence marcario en transacciones</div>
+        <div class="audience-use">Auditorías de portafolio PI de clientes</div>
+        <div class="audience-use">Validación rápida pre-filing</div>
+      </div>
+    </div>
+
+    <div class="audience-card fade-up fade-up-d1">
+      <span class="audience-num">02</span>
+      <span class="audience-tag">Especialista en PI</span>
+      <h3>Abogado de Propiedad Intelectual</h3>
+      <p>Búsqueda de anterioridades con cobertura nacional e internacional. Reporte listo para incluir en dictamen técnico o estrategia de registro.</p>
+      <div class="audience-uses">
+        <div class="audience-use">Búsqueda de anterioridades IMPI + OMPI</div>
+        <div class="audience-use">Monitoreo de gaceta para oposición</div>
+        <div class="audience-use">Soporte técnico para dictamen legal</div>
+      </div>
+    </div>
+
+    <div class="audience-card fade-up fade-up-d2">
+      <span class="audience-num">03</span>
+      <span class="audience-tag">Legal Inhouse</span>
+      <h3>Abogado In-House</h3>
+      <p>Validación interna de nuevos nombres de producto, líneas o marcas antes de escalar con despacho externo. Respuesta rápida a solicitudes del negocio.</p>
+      <div class="audience-uses">
+        <div class="audience-use">Validación de nombres de producto</div>
+        <div class="audience-use">Primera opinión interna antes de registro</div>
+        <div class="audience-use">Vigilancia marcaria de competidores</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CALENDLY ═══════════════════════════════════════════ -->
+<section class="calendly-section" id="agenda">
+  <div class="calendly-inner">
+    <div class="calendly-intro">
+      <div class="section-label">
+        <div class="line"></div>
+        <span>Empezar</span>
+      </div>
+      <h2 class="section-title fade-up">¿Tienes dudas?<br><em>Conversemos directamente.</em></h2>
+
+      <p class="fade-up fade-up-d1">En 30 minutos revisamos tu caso, te explicamos el alcance del análisis y respondemos todas tus preguntas sobre cobertura, tiempos y entregables.</p>
+
+      <div class="calendly-benefits">
+        <div class="benefit-row fade-up fade-up-d1">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Consulta sin costo</strong>
+            30 minutos para revisar tu caso específico.
+          </div>
+        </div>
+        <div class="benefit-row fade-up fade-up-d2">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Entrega en horas</strong>
+            Reportes entregados el mismo día o al día hábil siguiente.
+          </div>
+        </div>
+        <div class="benefit-row fade-up fade-up-d3">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Reporte listo para expediente</strong>
+            Formato Excel profesional con Nota Técnica incluida.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calendly-widget-wrap fade-up">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/consultas-werfurther/30min?background_color=141414&text_color=f0ede8&primary_color=d41e1e" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="tim-logo" style="text-decoration:none">
+        <div class="tim-wordmark">
+          <div class="tim-name-inline">
+            <span class="tim-name-trademark" style="font-size:13px">Trademark</span>
+            <span class="tim-name-insights" style="font-size:13px">Insights</span>
+            <span class="tim-name-mexico" style="font-size:13px">Mexico</span>
+          </div>
+          <div class="tim-divider"></div>
+          <div class="tim-tagline">
+            <span style="font-size:11px">Phonetic</span>
+            <span style="font-size:10px">Intelligence</span>
+          </div>
+        </div>
+      </a>
+      <p>Dos productos independientes de análisis marcario — Factibilidad de Registro y Análisis de Oposición — más seguimiento mensual por marca con clases Niza ilimitadas. Fuentes oficiales, motor IA propio.</p>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#entregables">Factibilidad de Registro</a>
+        <a href="#entregables">Análisis de Oposición</a>
+        <a href="#seguimiento">Seguimiento Mensual</a>
+      </div>
+      <div class="footer-col">
+        <h4>Para quién</h4>
+        <a href="#para-quien">Abogado Corporativo</a>
+        <a href="#para-quien">Especialista PI</a>
+        <a href="#para-quien">Legal Inhouse</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:consultas@werfurther.com">consultas@werfurther.com</a>
+        <a href="#agenda">Agendar consulta</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal mono">© 2025 Trademark Insights México · Phonetic Intelligence</span>
+    <span class="footer-tagline">Inteligencia que protege.</span>
+  </div>
+</footer>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════ -->
+<script>
+  /* Fade-up on scroll */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  /* Active section highlight on scroll */
+  const sections = ['proceso','entregables','seguimiento','fuentes','para-quien','agenda'];
+  const secBtns = document.querySelectorAll('.sec-btn[data-section]');
+  const secDropItems = document.querySelectorAll('.sec-drop-item[data-section]');
+  const sectionEls = sections.map(id => document.getElementById(id)).filter(Boolean);
+
+  const SECTION_LABELS = {
+    'proceso': 'Proceso', 'entregables': 'Productos', 'seguimiento': 'Seguimiento',
+    'fuentes': 'Fuentes', 'para-quien': 'Para Quién', 'agenda': 'Agendar'
+  };
+  const SECTION_NUMS = {
+    'proceso': '01', 'entregables': '02', 'seguimiento': '03',
+    'fuentes': '04', 'para-quien': '05', 'agenda': '06'
+  };
+
+  function setActiveSection(id) {
+    secBtns.forEach(b => b.classList.toggle('active', b.dataset.section === id));
+    secDropItems.forEach(b => b.classList.toggle('active', b.dataset.section === id));
+    const mobLabel = document.getElementById('mob-sec-label');
+    const mobNum   = document.getElementById('mob-sec-num');
+    if (mobLabel) mobLabel.textContent = SECTION_LABELS[id] || id;
+    if (mobNum)   mobNum.textContent   = SECTION_NUMS[id] || '';
+    const activeBtn = document.querySelector(`.sec-btn[data-section="${id}"]`);
+    if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  const secObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) setActiveSection(entry.target.id); });
+  }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
+  sectionEls.forEach(el => secObserver.observe(el));
+
+  secBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(btn.dataset.section);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  secDropItems.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(btn.dataset.section);
+      if (target) { closeMobNav(); setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60); }
+    });
+  });
+
+  /* Mobile dropdown */
+  function toggleSecNav() {
+    document.getElementById('sec-nav-mobile').classList.toggle('open');
+  }
+  function closeMobNav() {
+    document.getElementById('sec-nav-mobile').classList.remove('open');
+  }
+  document.addEventListener('click', e => {
+    const mob = document.getElementById('sec-nav-mobile');
+    if (mob && mob.classList.contains('open') && !mob.contains(e.target)) closeMobNav();
+  });
+  const steps = [
+    { icon: 'w3s2', status: 'done', text: 'Paginando resultados... completo', msg: '312 reg.' },
+  ];
+  let mockTimer = null;
+  function runMockAnim() {
+    let idx = 0;
+    mockTimer = setInterval(() => {
+      if (idx >= steps.length) { clearInterval(mockTimer); return; }
+      idx++;
+    }, 2000);
+  }
+  const mockObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { runMockAnim(); mockObs.unobserve(e.target); } });
+  }, { threshold: 0.3 });
+  const mockWrap = document.querySelector('.mockup-wrap');
+  if (mockWrap) mockObs.observe(mockWrap);
+</script>
+</body>
+</html>
